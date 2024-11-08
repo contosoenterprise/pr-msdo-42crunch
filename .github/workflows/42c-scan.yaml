@@ -59,7 +59,7 @@ jobs:
             api-definition: api-specifications/PhotoManager.json
             api-credential: ${{ steps.get_photoapi_token.outputs.PHOTO_API_TOKEN }}
             target-url: "http://app:8090/api"
-            upload-to-code-scanning: true
+            upload-to-code-scanning: false
             scan-report: 42Crunch_RawReport_${{ github.run_id }}.json
             export-as-pdf: 42Crunch_ScanReport_${{ github.run_id }}.pdf
             log-level: info
@@ -84,4 +84,9 @@ jobs:
         with:
           name: 42Crunch_ScanReport_${{ github.run_id }}
           path: 42Crunch_ScanReport_${{ github.run_id }}.pdf
-          if-no-files-found: error          
+          if-no-files-found: error
+      - name: Upload results to MSDO
+        uses: microsoft/security-devops-action@v1
+        id: msdo
+        with:
+          existingFilename: 42Crunch_ScanReport_${{ github.run_id }}.SARIF
