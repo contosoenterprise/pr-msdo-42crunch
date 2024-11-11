@@ -64,7 +64,7 @@ jobs:
             sarif-report: 42Crunch_ScanReport_${{ github.run_id }}.SARIF
       - name: save-sarif-report
         if: always()        
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
             name: 42Crunch_ScanReport_${{ github.run_id }}
             path: 42Crunch_ScanReport_${{ github.run_id }}.SARIF
