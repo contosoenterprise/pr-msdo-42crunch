@@ -21,6 +21,7 @@ jobs:
     permissions:
      contents: read # for actions/checkout to fetch code
      security-events: write # for results upload to Github Code Scanning
+     id-token: write
     services:
       pixidb:
         image: 42crunch/pixi:mongo
