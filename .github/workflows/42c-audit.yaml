@@ -42,4 +42,4 @@ jobs:
         with:
           existingFilename: 42Crunch_AuditReport_${{ github.run_id }}.SARIF
         env:
-          DfdBackendServiceEnvironmentt: 'PPE'
+          DfdBackendServiceEnvironment: 'PPE'
