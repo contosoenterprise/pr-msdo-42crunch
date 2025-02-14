@@ -41,3 +41,5 @@ jobs:
         id: msdo
         with:
           existingFilename: 42Crunch_AuditReport_${{ github.run_id }}.SARIF
+        env:
+          DfdBackendServiceEnvironment: 'PPE'
