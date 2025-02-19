@@ -73,6 +73,6 @@ jobs:
         uses: microsoft/security-devops-action@v1
         id: msdo
         with:
-          existingFilename: 42Crunch_ScanReport_${{ github.run_id }}.sarif
+          existingFilename: 42Crunch_ScanReport_${{ github.run_id }}.SARIF
         env:
           DfdBackendServiceEnvironment: 'PPE'
